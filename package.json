@@ -1,11 +1,13 @@
 {
   "name": "strelka-electron",
+  "packageManager": "yarn@3.6.0",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder build --linux AppImage"
   },
   "repository": {
     "type": "git",
@@ -13,12 +15,8 @@
   },
   "author": "Anton Kanashov",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/BlackHoleSoft/strelka-electron/issues"
-  },
-  "homepage": "https://github.com/BlackHoleSoft/strelka-electron#readme",
   "devDependencies": {
-    "@electron-forge/cli": "^6.2.1",
-    "electron": "^25.2.0"
+    "electron": "25.2.0",
+    "electron-builder": "^24.4.0"
   }
 }
