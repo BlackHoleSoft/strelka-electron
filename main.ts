@@ -1,14 +1,17 @@
 const {app, BrowserWindow} = require('electron');
 const path = require('path');
 
+const dev = !app.isPackaged;
+console.log('Is Packaged:', app.isPackaged);
+
 const createWindow = () => {
     // Create the browser window.
     const mainWindow = new BrowserWindow({
         width: 800,
         height: 600,
         fullscreen: true,
-        alwaysOnTop: true,
-        frame: false,
+        alwaysOnTop: !dev,
+        frame: dev,
         webPreferences: {
             preload: path.join(__dirname, 'preload.js'),
             devTools: true,
@@ -19,7 +22,7 @@ const createWindow = () => {
     mainWindow.loadFile('bundle/strelka.html');
 
     // Open the DevTools.
-    // mainWindow.webContents.openDevTools()
+    if (dev) mainWindow.webContents.openDevTools();
 };
 
 // This method will be called when Electron has finished
