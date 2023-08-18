@@ -9,20 +9,31 @@ const createWindow = () => {
     const mainWindow = new BrowserWindow({
         width: 800,
         height: 600,
-        fullscreen: true,
-        alwaysOnTop: !dev,
+        fullscreen: false,
+        maximized: true,
+        alwaysOnTop: false,
         frame: dev,
         webPreferences: {
             preload: path.join(__dirname, 'preload.js'),
             devTools: true,
         },
     });
+    mainWindow.maximize();
 
     // and load the index.html of the app.
     mainWindow.loadFile('bundle/strelka.html');
 
     // Open the DevTools.
     if (dev) mainWindow.webContents.openDevTools();
+
+    const testAppWnd = new BrowserWindow({
+        width: 400,
+        height: 400,
+        alwaysOnTop: true,
+        frame: false,
+        parent: mainWindow,
+    });
+    testAppWnd.loadURL('https://ya.ru/');
 };
 
 // This method will be called when Electron has finished
