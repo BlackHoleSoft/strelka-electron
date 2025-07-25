@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
       "allowJs": false,
-      "moduleResolution": "node",
-      "target": "ES5",
+      "moduleResolution": "bundler",
+      "module": "preserve",
+      "target": "es2015",
       "jsx": "react",
-      "baseUrl": "./",
+      "baseUrl": ".",
       "esModuleInterop": true,
       "noImplicitAny": true,
       "allowSyntheticDefaultImports": true,
@@ -15,6 +16,6 @@
           "*": ["src/*"],          
       }
   },
-  "include": ["src/**/*.tsx", "src/**/*.ts",  "src/app/commonTypes.d.ts"],
+  "include": ["**/*.tsx", "**/*.ts",  "src/app/commonTypes.d.ts"],
   "exclude": ["node_modules"]
 }

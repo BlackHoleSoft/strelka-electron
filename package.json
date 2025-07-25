@@ -1,6 +1,5 @@
 {
   "name": "strelka-electron",
-  "packageManager": "yarn@3.6.0",
   "version": "1.0.0",
   "description": "",
   "main": "main.ts",
@@ -32,13 +31,14 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "html-webpack-plugin": "^5.5.3",    
+    "html-webpack-plugin": "^5.5.3",
     "typescript": "^5.1.6",
     "webpack": "^5.88.1",
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "styled-components": "^6.1.19"
   }
 }

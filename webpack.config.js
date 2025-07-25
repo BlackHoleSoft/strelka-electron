@@ -28,8 +28,16 @@ module.exports = (env, argv) => {
             ],
         },
         resolve: {
-            extensions: ['.js', 'json', '.ts', '.tsx'],
+            extensions: ['.js', '.json', '.ts', '.tsx'],
             modules: [`${__dirname}/src`, 'node_modules'],
+            // alias: {
+            //     '@ui/*': path.resolve(__dirname, './src/components/ui'),
+            //     '@templates/*': path.resolve(__dirname, './src/components/templates'),
+            //     '@atoms/*': path.resolve(__dirname, './src/components/atoms'),
+            //     '@molecules/*': path.resolve(__dirname, './src/components/molecules'),
+            //     '@organisms/*': path.resolve(__dirname, './src/components/organisms'),
+            //     '@screens': path.resolve(__dirname, './src/screens'),
+            // },
         },
         output: {
             path: path.join(__dirname, 'bundle'),

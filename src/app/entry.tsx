@@ -1,3 +1,4 @@
+import {Main} from 'main';
 import React from 'react';
 import {createRoot} from 'react-dom/client';
 
@@ -12,7 +13,7 @@ const init = () => {
     }
 
     const root = createRoot(rootNode);
-    root.render(<div>STRELKA</div>);
+    root.render(<Main />);
 };
 
 init();
