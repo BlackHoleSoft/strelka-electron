@@ -1,12 +1,18 @@
 import React from 'react';
-import {render} from 'react-dom';
-import {Desktop} from './ui/pages/desktop';
+import {createRoot} from 'react-dom/client';
 
 console.log('Entry');
 
 const init = () => {
-    const root = document.getElementById('root');
-    render(<Desktop />, root);
+    const rootNode = document.getElementById('root');
+
+    if (!rootNode) {
+        console.error('Cannot find root node!');
+        return;
+    }
+
+    const root = createRoot(rootNode);
+    root.render(<div>STRELKA</div>);
 };
 
 init();

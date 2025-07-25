@@ -25,15 +25,6 @@ const createWindow = () => {
 
     // Open the DevTools.
     if (dev) mainWindow.webContents.openDevTools();
-
-    const testAppWnd = new BrowserWindow({
-        width: 400,
-        height: 400,
-        alwaysOnTop: true,
-        frame: false,
-        parent: mainWindow,
-    });
-    testAppWnd.loadURL('https://ya.ru/');
 };
 
 // This method will be called when Electron has finished

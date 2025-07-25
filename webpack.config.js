@@ -25,29 +25,6 @@ module.exports = (env, argv) => {
                         },
                     ],
                 },
-                {
-                    test: /\.scss$/,
-                    use: [
-                        'style-loader',
-                        {
-                            loader: 'css-loader',
-                            options: {
-                                sourceMap: true,
-                                modules: {
-                                    mode: resourcePath => {
-                                        if (/global.s?css$/i.test(resourcePath)) {
-                                            return 'global';
-                                        }
-
-                                        return 'local';
-                                    },
-                                    localIdentName: '[name]__[local]',
-                                },
-                            },
-                        },
-                        {loader: 'sass-loader', options: {sourceMap: true}},
-                    ],
-                },
             ],
         },
         resolve: {
