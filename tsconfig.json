@@ -16,6 +16,6 @@
           "*": ["src/*"],          
       }
   },
-  "include": ["**/*.tsx", "**/*.ts",  "src/app/commonTypes.d.ts"],
+  "include": ["**/*.tsx", "**/*.ts",  "src/app/commonTypes.d.ts", "main.js"],
   "exclude": ["node_modules"]
 }

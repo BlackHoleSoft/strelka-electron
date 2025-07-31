@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 
@@ -24,6 +25,10 @@ module.exports = (env, argv) => {
                             },
                         },
                     ],
+                },
+                {
+                    test: /\.(png|jpeg|jpg|svg)/,
+                    type: 'asset/resource',
                 },
             ],
         },
@@ -51,6 +56,9 @@ module.exports = (env, argv) => {
                 template: path.join(__dirname, 'src', 'app', 'index.html'),
                 filename: 'strelka.html',
                 cache: false,
+            }),
+            new CopyWebpackPlugin({
+                patterns: [{from: path.join(__dirname, 'src', 'fonts'), to: 'fonts'}],
             }),
         ],
     };
